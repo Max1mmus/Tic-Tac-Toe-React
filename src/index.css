@@ -3,20 +3,33 @@ body {
     font-family: "Century Gothic", Futura, sans-serif;;
 }
 
-h1 {
+.player {
     text-align: center;
-}
-
-.square {
-    width: 85px;
-    height: 85px;
-    display: inline-block;
-    border: 1px solid #EAD7D6;
-    background: #726F9F;
-    font-size: 50px;
+    margin-bottom: 10px;    
 }
 
 .board {
     width: max-content;
     margin: auto;
+}
+
+.square {
+    width: 85px;
+    height: 85px;
+    border: 1px solid #EAD7D6;
+    background: #726F9F;
+    font-size: 50px;
+    padding: 0px;
+    float: left;
+    margin: 1px;
+}
+
+.square:hover {
+    background: yellow;
+}
+
+.square::after{
+    content: "";
+    clear: both;
+    display: table;
 }
