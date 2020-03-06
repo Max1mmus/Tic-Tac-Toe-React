@@ -1,6 +1,7 @@
 # Tic-Tac-Toe React version
 
 This is my first encounter with React.
+
 I used pointers from [Reactjs.org](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment).
 
 I still haven't implemented all tutorial solutions because I'm still wrapping my head around all of it,
