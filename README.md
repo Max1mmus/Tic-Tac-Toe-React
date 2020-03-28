@@ -11,6 +11,10 @@ To implement :
 
 * [ ] Time travel, past moves
 
+#### Sample:
+
+<img src='sample.gif' width='400px' />
+
 #### Available Scripts
 
 In the project directory, you can run:
