@@ -13,7 +13,7 @@ To implement :
 
 #### Sample:
 
-<img src='sample.gif' width='400px' />
+<img src='sample.jpg' width='400px' />
 
 #### Available Scripts
 
