@@ -1,36 +1,34 @@
 import React from 'react';
 import {Square} from './square';
 
-export class Board extends React.Component {
-    generateBoard (rows, cols) {
+export const Board = ({squares, onClick}) => {
+    const generateBoard = (rows, cols) => {
         const board = [];
         let counter = 0;
 
         for (let i = 0; i < rows; i++) {
             const row = [];
             for (let j = 0; j < cols; j++) {
-                row.push(this.renderSquare(counter++));
+                row.push(renderSquare(counter++));
             }
-            board.push(<div className="board-row">{row}</div>);
+            board.push(<div key={`row-${i}`} className='board-row'>{row}</div>);
         }
         return board;
     }
 
-    renderSquare (i) {
+    function renderSquare (i) {
         return (
             <Square
                 key={i}
-                value={this.props.squares[i]}
-                onClick={() => this.props.onClick(i)}
+                value={squares[i]}
+                onClick={() => onClick(i)}
             />
         );
     }
-
-    render () {
-        return (
-            <div className="board">
-                {this.generateBoard(3, 3)}
-            </div>
-        );
-    }
+    
+    return (
+        <div className="board">
+            {generateBoard(3, 3)}
+        </div>
+    );
 }
