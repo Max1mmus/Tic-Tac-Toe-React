@@ -1,6 +1,10 @@
+body * {
+    font-family: 'Dancing Script', cursive !important;
+}
+
 body {
     background-color: #A49BC5;
-    font-family: "Century Gothic", Futura, sans-serif;;
+    font-family: "Century Gothic", Futura, sans-serif;
 }
 
 .player {
@@ -18,16 +22,17 @@ body {
 .square {
     width: 85px;
     height: 85px;
-    border: 1px solid #EAD7D6;
-    background: #726F9F;
     font-size: 50px;
     padding: 0px;
     float: left;
     margin: 1px;
+    border-radius: 3px;
+    background-color: #BCAAFF;
+    border: none;
 }
 
 .square:hover {
-    background: yellow;
+    background: #d0ffb4;
 }
 
 .square::after{
@@ -46,4 +51,7 @@ body {
 .newGame {
     width: 90px;
     height: 35px;
+    font-size: 15px;
+    border: none;
+    border-radius: 3px;
 }
