@@ -2,7 +2,6 @@ import React from 'react';
 import {Board} from './board';
 import {NewGame} from './newgame';
 
-
 const winLog = (squares) => {
     const winCombos = [
         [0, 1, 2],
@@ -38,7 +37,6 @@ const checkDraw = (squares) => {
     return false;
 }
 
-
 const initialState = {
     squares : Array(9).fill(null),
     playerX : true,
@@ -73,21 +71,27 @@ export class Game extends React.Component {
         const winner =  winLog(this.state.squares);
 
         if (winner && !checkDraw(this.state.squares)) {
-            status = "Winner is: " + winner;
+            status = `Winner is: ${winner}`;
         } else if (!winner && !checkDraw(this.state.squares)){
             status = `Next player : ${this.state.playerX ? "X" : "O"}`;
         } else {
-            status = "It's a draw!"
+            status = "It's a draw!";
         }
         return (
-            <div className="game">
-                <div className="player">{status}</div>
-                <Board
-                    squares={this.state.squares}
-                    onClick={i => this.handleClick(i)}
-                />
-                <NewGame onClick={this.resetGame} />
-            </div>
+            <>
+                <div className="game">
+                    <div className="player">{status}</div>
+                    <Board
+                        squares={this.state.squares}
+                        onClick={i => this.handleClick(i)}
+                    />
+                    <NewGame onClick={this.resetGame} />
+                </div>
+                <footer>
+                    Built with <span id="heart"> ❤ </span> 
+                    By: <a id="Max1mmus" href="https://github.com/Max1mmus">Max1mmus</a>
+                </footer>
+            </>
         );
     }
 }
