@@ -89,7 +89,15 @@ export class Game extends React.Component {
                 </div>
                 <footer>
                     Built with <span id="heart"> ❤ </span> 
-                    By: <a id="Max1mmus" href="https://github.com/Max1mmus">Max1mmus</a>
+                    By: 
+                    <a 
+                        id="Max1mmus" 
+                        href="https://github.com/Max1mmus"
+                        rel="noopener noreferrer" 
+                        target="_blank"
+                    >
+                        Max1mmus
+                    </a>
                 </footer>
             </>
         );
