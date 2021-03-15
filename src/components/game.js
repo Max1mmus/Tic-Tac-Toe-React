@@ -1,8 +1,8 @@
-import React from 'react';
-import {Board} from './board';
-import {NewGame} from './newgame';
+import React, {useState} from "react";
+import {Board} from "./board";
+import {NewGame} from "./newgame";
 
-const winLog = (squares) => {
+function winLog (squares) {
     const winCombos = [
         [0, 1, 2],
         [3, 4, 5],
@@ -16,25 +16,19 @@ const winLog = (squares) => {
 
     for (let i = 0; i < winCombos.length; i++) {
         const [a, b, c] = winCombos[i];
+
         if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) {
             return squares[a];
         }
     }
     return null;
-};
+}
 
-const checkDraw = (squares) => {
-    let moves = 0;
-    squares.forEach(square => {
-        if (square != null) {
-            moves++
-        }  
-    });
-
-    if (moves === 9) {
-        return true
+function checkDraw (squares) {
+    for (const square of squares) {
+        if (square === null) return false;
     }
-    return false;
+    return true;
 }
 
 const initialState = {
