@@ -50,16 +50,15 @@ export const Game = () => {
         setCurrentPlayer(true);
     }
 
-    render () {
-        let status;
-        const winner =  winLog(this.state.squares);
+    const winner = winLog(squares);
+    let status;
 
-        if (winner && !checkDraw(this.state.squares)) {
-            status = `Winner is: ${winner}`;
-        } else if (!winner && !checkDraw(this.state.squares)){
-            status = `Next player : ${this.state.playerX ? "X" : "O"}`;
-        } else {
-            status = "It's a draw!";
+    if (winner) {
+        status = `Winner is: ${winner}`;
+    } else if (checkDraw(squares)) {
+        status = "It's a draw!";
+    } else {
+        status = `Next player : ${playerX ? "X" : "O"}`;
     }
 
     return (
