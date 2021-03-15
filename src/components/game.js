@@ -31,33 +31,23 @@ function checkDraw (squares) {
     return true;
 }
 
-const initialState = {
-    squares : Array(9).fill(null),
-    playerX : true,
-}
+export const Game = () => {
+    const [squares, setSquares] = useState(Array(9).fill(null));
+    const [playerX, setCurrentPlayer] = useState(true);
 
-export class Game extends React.Component {
-    constructor(props) {
-        super(props);
+    function handleClick (i) {
+        const squaresCopy = squares;
 
-        this.state = initialState;
-        this.resetGame = this.resetGame.bind(this);
+        if (squaresCopy[i] || winLog(squaresCopy)) return;
+        squaresCopy[i] = playerX ? "X" : "O";
+
+        setSquares(squaresCopy);
+        setCurrentPlayer(!playerX);
     }
 
-    handleClick (i) {
-        const squares = this.state.squares.slice();
-        if (squares[i] || winLog(squares)) {
-            return;
-        }
-        squares[i] = this.state.playerX ? "X" : "O";
-        this.setState({
-            squares: squares,
-            playerX: !this.state.playerX,
-        });
-    }
-
-    resetGame () {
-        this.setState(initialState);
+    function resetGame () {
+        setSquares(Array(9).fill(null));
+        setCurrentPlayer(true);
     }
 
     render () {
@@ -70,30 +60,30 @@ export class Game extends React.Component {
             status = `Next player : ${this.state.playerX ? "X" : "O"}`;
         } else {
             status = "It's a draw!";
-        }
-        return (
-            <>
-                <div className="game">
-                    <div className="player">{status}</div>
-                    <Board
-                        squares={this.state.squares}
-                        onClick={i => this.handleClick(i)}
-                    />
-                    <NewGame onClick={this.resetGame} />
-                </div>
-                <footer>
-                    Built with <span id="heart"> ❤ </span> 
-                    By: 
-                    <a 
-                        id="Max1mmus" 
-                        href="https://github.com/Max1mmus"
-                        rel="noopener noreferrer" 
-                        target="_blank"
-                    >
-                        Max1mmus
-                    </a>
-                </footer>
-            </>
-        );
     }
-}
+
+    return (
+        <>
+            <div className="game">
+                <div className="player">{status}</div>
+                <Board
+                    squares={squares}
+                    onClick={(i) => handleClick(i)}
+                />
+                <NewGame onClick={resetGame} />
+            </div>
+            <footer>
+                Built with <span id="heart"> ❤ </span>
+                By:
+                <a
+                    id="Max1mmus"
+                    href="https://github.com/Max1mmus"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    Max1mmus
+                </a>
+            </footer>
+        </>
+    );
+};
