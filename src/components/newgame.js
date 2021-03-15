@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function NewGame (props) {
+export function NewGame ({onClick}) {
     return (
         <div className="buttonContainer">
-            <button className="newGame" onClick={props.onClick}>
+            <button className="newGame" onClick={onClick}>
                 New Game
             </button>
         </div>
