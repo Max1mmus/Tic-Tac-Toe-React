@@ -1,5 +1,5 @@
-import React from 'react';
-import {Square} from './square';
+import React from "react";
+import {Square} from "./square";
 
 export const Board = ({squares, onClick}) => {
     const generateBoard = (rows, cols) => {
@@ -8,13 +8,14 @@ export const Board = ({squares, onClick}) => {
 
         for (let i = 0; i < rows; i++) {
             const row = [];
+
             for (let j = 0; j < cols; j++) {
                 row.push(renderSquare(counter++));
             }
-            board.push(<div key={`row-${i}`} className='board-row'>{row}</div>);
+            board.push(<div key={`row-${i}`} className="board-row">{row}</div>);
         }
         return board;
-    }
+    };
 
     function renderSquare (i) {
         return (
@@ -25,10 +26,10 @@ export const Board = ({squares, onClick}) => {
             />
         );
     }
-    
+
     return (
         <div className="board">
             {generateBoard(3, 3)}
         </div>
     );
-}
+};
