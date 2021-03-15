@@ -1,13 +1,13 @@
 import React from 'react';
 
-export function Square (props) {
+export function Square ({value, onClick}) {
     return (
         <button
             className="square"
-            onClick={props.onClick}
-            style={{backgroundColor : props.value !== null ? "#d0ffb4" : null}}
+            onClick={onClick}
+            style={{backgroundColor : value !== null ? "#d0ffb4" : null}}
         >
-            {props.value}
+            {value}
         </button>
     );
 }
