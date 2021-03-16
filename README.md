@@ -1,6 +1,7 @@
 # Tic-Tac-Toe React version
 
-This is (was) my first encounter with React.
+This is (was) my first encounter with React.  
+Take a look at :pushpin:[Live version!](https://max1mmus.github.io/Tic-Tac-Toe-React/)
 
 Inspired by [Reactjs.org](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment).
 
