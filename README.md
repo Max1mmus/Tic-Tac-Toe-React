@@ -3,8 +3,6 @@
 This is (was) my first encounter with React.  
 Take a look at :pushpin:[Live version!](https://max1mmus.github.io/Tic-Tac-Toe-React/)
 
-Inspired by [Reactjs.org](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment).
-
 #### Sample:
 
 <img src='sample.jpg' width='400px' />
@@ -36,3 +34,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Inspired by [Reactjs.org](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment) tutorial.
