@@ -29,6 +29,7 @@ body {
     border-radius: 3px;
     background-color: #BCAAFF;
     border: none;
+    cursor: pointer;
 }
 
 .square:hover {
@@ -54,22 +55,22 @@ body {
     font-size: 15px;
     border: none;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 25px;
-  text-align: center;
-  font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    font-size: 15px;
 }
 #heart {
-  color: red;
+    color: red;
 }
 #Max1mmus {
-  color: black;
-  outline: none;
+    color: black;
 }
